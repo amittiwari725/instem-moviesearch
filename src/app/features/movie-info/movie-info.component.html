@@ -1,0 +1,19 @@
+<div class="info-container">
+    @if(movie){
+        <img [src]="movie['Image URL']" [alt]="movie.Title" class="card-bg" loading="lazy">
+        <div class="text-wrap">
+            <h1>{{ movie.Title }} ({{ movie.Year }})</h1>
+            <p><strong>Genres:</strong> {{ movie.Genres }}</p>
+            <p><strong>Rating:</strong> {{ movie.Rating }}</p>
+            <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+            <p><strong>Directors:</strong> {{ movie.Directors }}</p>
+            <p ><strong>Plot:</strong> {{ movie.Plot }}</p>
+            <p><strong>Release Date:</strong> {{ movie['Release Date'] }}</p>
+            <p><strong>Running Time:</strong> {{ movie['Running Time (secs)'] }}</p>
+            <p><strong>Rank:</strong> {{ movie.Rank }}</p>
+        </div>
+    }@else {
+        <p>Movie not found.</p>
+    }
+    <!-- </div> -->
+</div>

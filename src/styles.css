@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+/* app.component.css or global styles.css */
+@font-face {
+  font-family: 'PacificoRegular'; /* The name you will use in your CSS */
+  src: url('/assets/font/Pacifico-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsRegular'; /* The name you will use in your CSS */
+  src: url('/assets/font/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --font-logo: 'Pacifico', cursive;      /* For "moovee" and Hero titles */
+  --font-heading: 'Satisfy', cursive;   /* For Footer headers and Card titles */
+  --font-main: 'Inter', sans-serif;      /* For Search, Year, and Genres */
+  --font-pacifico: 'PacificoRegular', cursive; /* Custom Pacifico font */
+  --font-poppins: 'PoppinsRegular', sans-serif; /* Custom Poppins font */
+}
+
+.logo-text {
+  font-family: var(--font-logo);
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.footer-column h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.movie-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: white;
+  line-height: 1.1;
+}
+
+.search-input, .movie-year, .genre-badge {
+  font-family: var(--font-main);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

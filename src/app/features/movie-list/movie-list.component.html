@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div>
+    <h1 class="flick-title">Find your new favourite flic...</h1>
+  </div>
+  <div class="search-header">
+    <app-search-movies (searchChanged)="onSearchChanged($event)"></app-search-movies>
+  </div>
+  <div class="viewport-wrapper" style="width: 100%; height: 400px;"> 
+    <cdk-virtual-scroll-viewport
+    class="example-viewport"
+    itemSize="72"
+    (scrolledIndexChange)="currentIndex($event)">
+    <div class="data-card" *cdkVirtualFor="let movie of filteredMovies | async; trackBy: idTrackFn">
+      <div class="movie-card" (click)="onMovieClick(movie)">
+        <img [src]="movie['Image URL']" [alt]="movie.Title" [width]="200" [height]="250" class="card-bg" loading="lazy">
+          <div class="card-overlay">
+            <span class="movie-year">{{ movie.Year }}</span>
+            <h3 class="movie-title">{{ movie.Title }}</h3>
+            <div class="genre-tags">
+              <span class="tag" *ngFor="let genres of movie.Genres.split(', ').slice(0, 2)">
+                {{ genres }}
+              </span>
+            </div>
+          </div>
+          <div class="rating-badge">
+            {{ movie.Rating }}
+          </div>
+          </div>
+          <div *ngIf="isLoading">Loading...</div>
+        </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
+
+                

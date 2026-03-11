@@ -1,0 +1,13 @@
+<section style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  
+  <div class="search-wrapper">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      (input)="onInputChange()" 
+      placeholder="Search moovee..."
+      class="search-input"
+    >
+    <span class="search-icon">🔍</span>
+  </div>
+</section>
